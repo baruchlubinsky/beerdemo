@@ -1,0 +1,6 @@
+{{#link-to 'beers.new'}}Add{{/link-to}}
+{{#each}}
+<h3>{{name}}</h3>
+<p>{{type}}</p>
+<p>{{#link-to 'beers.edit' this}}Edit{{/link-to}}</p>
+{{/each}}
