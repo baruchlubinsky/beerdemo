@@ -5,7 +5,7 @@ export default Ember.Route.extend({
 	actions: {
 		save: function() {
 			var self = this;
-			this.controller.get('model').save().then(
+			self.controller.get('model').save().then(
 				function() {
 					self.transitionTo('beers.index');
 				});
