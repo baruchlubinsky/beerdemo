@@ -9,6 +9,17 @@ export default Ember.Route.extend({
 				function() {
 					self.transitionTo('beers.index');
 				});
+		},
+		delete: function() {
+			var self = this;
+			var model = self.controller.get('model'); 
+			model.deleteRecord();
+			model.save().then(
+				function() {
+					self.transitionTo('beers.index');
+				}, function (error) {
+					Ember.Logger.debug(error);
+				});
 		}
 	}
 });
