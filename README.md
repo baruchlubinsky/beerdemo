@@ -1,6 +1,6 @@
 # Demo
 
-This README outlines the details of collaborating on this Ember application.
+This application is designed to demonstrate how simple it can be to use Ember Data. It connects to an instance of [EveryREST](https://github.com/baruchlubinsky/everyrest/).
 
 ## Installation
 

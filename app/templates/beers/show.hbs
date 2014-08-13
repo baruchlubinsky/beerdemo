@@ -1,0 +1,17 @@
+<h2>{{name}}</h2>
+<h3>{{type}}</h3>
+<h4>Comments</h4>
+<ul>
+{{#each model.comments}}
+<li>
+	<p>{{message}}</p>
+	<em>{{user}}</em>
+</li>
+{{/each}}
+</ul>
+<h4>Post</h4>
+<p>Name:</br>
+{{input value=newComment.user}}</p>
+<p>Comment:</br>
+{{textarea value=newComment.message cols="40" rows="4"}}</p>
+<button {{action 'comment'}}>Comment</button>
