@@ -13,8 +13,7 @@ export default Ember.Route.extend({
 		delete: function() {
 			var self = this;
 			var model = self.controller.get('model'); 
-			model.deleteRecord();
-			model.save().then(
+			model.destroyRecord().then(
 				function() {
 					self.transitionTo('beers.index');
 				}, function (error) {

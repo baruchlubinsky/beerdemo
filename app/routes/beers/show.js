@@ -13,16 +13,20 @@ export default Ember.Route.extend({
 			var self = this;
 			var comment = self.controller.get('newComment');
 			var beer = self.controller.get('model');
-			beer.get('comments').pushObject(comment);
+			beer.get('comments').addObject(comment);
 			comment.save().then(
 				function() {
 					beer.save().then(
 						function() {
-							self.controller.set('newComment', self.store.createRecord('comment'));
+							self.controller.set('newComment', self.store.createRecord('comment', {}));
 						}
 					);
 				}
 			);
+		},
+		willTransition: function() {
+			this.controller.get('newComment').destroyRecord();
+			return true;
 		}
-	}
+	},
 });
